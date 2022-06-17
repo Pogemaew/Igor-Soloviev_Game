@@ -170,7 +170,14 @@ function onCanvasKeyDown(event) {
 }
 
 function onMouseMove(event) {
-    PLAYER.x = event.clientX - PLAYER.width / 2;
+    if((event.clientX + PLAYER.width < GAME.width)&& (event.clientX - PLAYER.width / 2 >0)) {
+        PLAYER.x = event.clientX - PLAYER.width / 2;
+    } else {
+        if ((event.clientX + PLAYER.width > GAME.width)) {
+        } else {
+            PLAYER.x = 0;
+        }
+    }
 }
 
 
